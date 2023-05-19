@@ -11,17 +11,36 @@ export const InvestorLandingPage = () => {
     const [search, setSearch] = useState("");
     const [filterstartupdata, setFilterstartupdata] = useState([]);
     const [startupdata, setStartupdata] = useState([]);
+    // useEffect(() => {
+    //     axios
+    //         .get("http://localhost:8000/startups")
+    //         .then((response) => {
+    //             setStartupdata(response.data);
+
+
+    //         })
+    //         .catch((error) => {
+    //             console.error("Error fetching startup data: ", error);
+    //         });
+    // }, []);
+
     useEffect(() => {
-        axios
-            .get("http://localhost:8000/startups")
-            .then((response) => {
-                setStartupdata(response.data);
+        const email = localStorage.getItem("email");
+        console.log(email);
 
+        if (email) {
 
-            })
-            .catch((error) => {
-                console.error("Error fetching startup data: ", error);
-            });
+            axios
+                .get(`https://raj-spring.kaushalkr.com/investors/rec?email=${email}`)
+                .then((response) => {
+                    // Assuming the response data is an array of startups
+                    const startups = response.data;
+                    setStartupdata(startups);
+                })
+                .catch((error) => {
+                    console.error("Error fetching startup data: ", error);
+                });
+        }
     }, []);
 
 

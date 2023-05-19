@@ -117,7 +117,7 @@ export const RegistrationInvestor = () => {
 
 
         try {
-            const response = await axios.post("http://localhost:8000/investors", formData);
+            const response = await axios.post("https://raj-spring.kaushalkr.com/investors", formData);
             // localStorage.setItem("name", name);
             swal({
                 title: 'Success!',

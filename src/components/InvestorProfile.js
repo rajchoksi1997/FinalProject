@@ -134,7 +134,7 @@ const InvestorProfile = () => {
 
 
         try {
-            const response = await axios.put("http://localhost:8000/investors", formData);
+            const response = await axios.put("https://raj-spring.kaushalkr.com/investors", formData);
             // navigate('/investor/landingPage');
 
             swal({
@@ -252,7 +252,7 @@ const InvestorProfile = () => {
             }
             try {
 
-                const response = await axios.get('http://localhost:8000/investors/getbyemail', {
+                const response = await axios.get('https://raj-spring.kaushalkr.com/investors/getbyemail', {
                     params: {
                         email: localStorage.getItem("email"),
                     },

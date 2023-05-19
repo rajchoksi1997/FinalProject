@@ -179,7 +179,7 @@ export const RegistrationStartup = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:8000/startups', formData);
+            const response = await axios.post('https://raj-spring.kaushalkr.com/startups', formData);
 
             console.log(response);
             swal({

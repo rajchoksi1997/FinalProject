@@ -47,7 +47,7 @@ export const SlideLogin = () => {
             password: loginpassword
         }
         axios
-            .post('http://localhost:8000/api/auth/login', userData)
+            .post('https://raj-spring.kaushalkr.com/api/auth/login', userData)
             .then((response) => {
                 console.log(response.data)
                 localStorage.setItem("email", loginemail);
@@ -90,7 +90,7 @@ export const SlideLogin = () => {
         };
 
         axios
-            .post('http://localhost:8000/api/auth/signup', userData)
+            .post('https://raj-spring.kaushalkr.com/api/auth/signup', userData)
             .then((response) => {
                 console.log(response.data);
                 localStorage.setItem("email", email);

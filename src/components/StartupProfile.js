@@ -179,7 +179,7 @@ export const StartupProfile = () => {
         }
 
         try {
-            const response = await axios.put('http://localhost:8000/startups', formData);
+            const response = await axios.put('https://raj-spring.kaushalkr.com/startups', formData);
 
             console.log(response);
             swal({
@@ -286,7 +286,7 @@ export const StartupProfile = () => {
             }
             try {
 
-                const response = await axios.get('http://localhost:8000/startups/getbyemail', {
+                const response = await axios.get('https://raj-spring.kaushalkr.com/startups/getbyemail', {
                     params: {
                         email: localStorage.getItem("email"),
                         // email: "raj@sjsu.edu"

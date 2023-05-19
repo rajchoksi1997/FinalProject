@@ -11,7 +11,7 @@ export const StartupLandingPage = () => {
     const [filterinvestordata, setFilterInvestorData] = useState([]);
     useEffect(() => {
         axios
-            .get("http://localhost:8000/investors")
+            .get("https://raj-spring.kaushalkr.com/investors")
             .then((response) => {
                 setInvestorData(response.data);
 
